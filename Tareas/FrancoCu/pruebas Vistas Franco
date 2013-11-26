@@ -1,0 +1,49 @@
+--prueba consulta
+select p.titulo as peliculas, s.title as comentario
+from cc320114_db.peliculas as p, cc320125_db.source as s
+where p.pelicula_ID = s.id;
+
+--prueba view (no tengo permiso)
+create view cc320114_db.hola as
+select p.titulo as peliculas, s.title as comentario
+from cc320114_db.peliculas as p, cc320125_db.source as s
+where p.pelicula_ID = s.id;
+
+--prueba join
+select p.titulo as peliculas, s.title as comentario
+from cc320114_db.peliculas as p join cc320125_db.source as s on p.pelicula_ID = s.id;
+
+--vista 1 (la cantidad de likes y dislikes de las peliculas (pelicula, like, dislike))
+
+create view likeo_peliculas as
+
+select t1.t as pelicula, t1.l as likes, t2.dl as dislikes 
+from(
+	select p.titulo as t, count(l.type) as l
+
+	from cc320114_db.peliculas as p
+	join cc320125_db.source as s 
+	on p.pelicula_id = s.id 
+	join cc320125_db.liking as l
+	on s.id = l.id_source 
+	
+	where l.type = 1
+	
+	group by l.id_source) as t1
+join(	
+	select p.titulo as t, count(l.type) as dl
+
+	from cc320114_db.peliculas as p
+	join cc320125_db.source as s 
+	on p.pelicula_id = s.id 
+	join cc320125_db.liking as l
+	on s.id = l.id_source 
+
+	where l.type = 0
+	
+	group by l.id_source) as t2
+on t1.t = t2.t;
+
+--
+
+

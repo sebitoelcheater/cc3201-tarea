@@ -55,7 +55,7 @@ create view cc320114_db.likeo_peliculas_likes as
 select p.titulo as t, count(l.type) as l
 from cc320114_db.peliculas as p
 join cc320125_db.source as s 
-on p.pelicula_id = s.id_source 
+on p.pelicula_id = s.id 
 join cc320125_db.liking as l
 on s.id = l.id_source 
 where l.type = 1
@@ -65,7 +65,7 @@ create view cc320114_db.likeo_peliculas_dislikes as
 select p.titulo as t, count(l.type) as dl
 from cc320114_db.peliculas as p
 join cc320125_db.source as s 
-on p.pelicula_id = s.id_source 
+on p.pelicula_id = s.id 
 join cc320125_db.liking as l
 on s.id = l.id_source 
 where l.type = 0

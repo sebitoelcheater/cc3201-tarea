@@ -1,0 +1,273 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  21 OCT 2013 23:54
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**portada.tex
+(./portada.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+! Undefined control sequence.
+<argument> \includegraphics 
+                            [width=5cm,height=3.5cm]{logos/logo_fcfm.jpg}
+l.4 ...dth=5cm,height=3.5cm]{logos/logo_fcfm.jpg}}
+                                                  
+? 
+Missing character: There is no [ in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 5 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4 ...dth=5cm,height=3.5cm]{logos/logo_fcfm.jpg}}
+                                                  
+? 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 4.
+! Extra }, or forgotten $.
+<argument> ...m,height=3.5cm]{logos/logo_fcfm.jpg}
+                                                  
+l.4 ...dth=5cm,height=3.5cm]{logos/logo_fcfm.jpg}}
+                                                  
+? 
+! Extra }, or forgotten $.
+\put ... \hb@xt@ \z@ {\kern #1\unitlength #3\hss }
+                                                  \ignorespaces 
+l.4 ...dth=5cm,height=3.5cm]{logos/logo_fcfm.jpg}}
+                                                  
+? 
+! Extra }, or forgotten $.
+\endpicture ->\egroup 
+                      \hss \egroup \ht \@picbox \@picht \dp \@picbox \z@ \mb...
+l.5 \end{picture}
+                 
+? 
+! Extra }, or forgotten $.
+\endpicture ->\egroup \hss \egroup 
+                                   \ht \@picbox \@picht \dp \@picbox \z@ \mb...
+l.5 \end{picture}
+                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5 \end{picture}
+                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.5 \end{picture}
+                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.5 \end{picture}
+                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.5 \end{picture}
+                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.5 \end{picture}
+                 
+? 
+
+Underfull \hbox (badness 10000) detected at line 5
+ []
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \\
+      
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \\
+      
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 \\
+      
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \\
+       
+? 
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \begin
+           {center}
+? 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \begin{center}
+                   
+? 
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 11--11
+[] 
+ []
+
+! Undefined control sequence.
+<argument> {\Huge 
+                  Tarea 2 }\\[4cm] {\LARGE Modelo de Datos de una Red Social...
+l.13 ...odelo de Datos de una Red Social en BCNF}}
+                                                  \\[1cm]
+? 
+
+Overfull \hbox (28.22899pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 Tarea 
+ []
+
+
+Overfull \hbox (5.74997pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 2 
+ []
+
+! Undefined control sequence.
+<argument> {\Huge Tarea 2 }\\[4cm] {\LARGE 
+                                           Modelo de Datos de una Red Social...
+l.13 ...odelo de Datos de una Red Social en BCNF}}
+                                                  \\[1cm]
+? 
+
+Overfull \hbox (37.59009pt too wide) in paragraph at lines 13--13
+ []\OT1/cmr/bx/n/10 Modelo 
+ []
+
+
+Overfull \hbox (11.65967pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 de 
+ []
+
+
+Overfull \hbox (29.16786pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 Datos 
+ []
+
+
+Overfull \hbox (11.65967pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 de 
+ []
+
+
+Overfull \hbox (18.36794pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 una 
+ []
+
+
+Overfull \hbox (20.28462pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 Red 
+ []
+
+
+Overfull \hbox (15.97214pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 So- 
+ []
+
+
+Overfull \hbox (17.09016pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 cial 
+ []
+
+
+Overfull \hbox (11.65967pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 en 
+ []
+
+
+Overfull \hbox (32.72205pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/bx/n/10 BCNF 
+ []
+
+! Undefined control sequence.
+l.15 {\Large
+             Sebasti√°n Hern√°ndez}\\[0.3cm]
+? 
+Missing character: There is no S in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no √ in font nullfont!
+Missing character: There is no ° in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no √ in font nullfont!

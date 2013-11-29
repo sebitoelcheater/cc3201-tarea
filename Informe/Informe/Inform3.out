@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.2}{Descripci\363n del Problema}{}% 2
+\BOOKMARK [1][-]{section.3}{Soluci\363n}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Tabla User}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Tabla Source}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Tabla Following}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Tabla Friendship}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{Tabla Liking}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.6}{Tabla Tag}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.7}{Tabla Tag Liking}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Dependencias funcionales}{}% 11
+\BOOKMARK [1][-]{section.5}{Consultas SQL}{}% 12
+\BOOKMARK [1][-]{section.6}{Anexo}{}% 13
+\BOOKMARK [2][-]{subsection.6.1}{Estructura de Tablas de la Base de Datos}{section.6}% 14

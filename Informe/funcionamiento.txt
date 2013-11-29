@@ -1,0 +1,23 @@
+a) Por cada fila de la tabla 'peliculas' hay una fila en la tabla 'source' que le corresponde. Esto es:
+Cada vez que se inserte una película, deberá insertarse una fila en la tabla 'source' donde source.id_source = peliculas.pelicula_ID
+De esta forma, se implementan los comentarios, likes y tags a las películas.
+
+b) Por cada fila de la tabla 'actores' hay una fila en la tabla 'user' que le corresponde. Esto es:
+Cada vez que se inserte un actor, deberá insertarse una fila en la tabla user donde user.name = actores.nombre
+De esta forma, se implementan los following a los actores.
+
+c) Por cada fila de la tabla 'Triple_Plan' hay una fila en la tabla 'source' que le corresponde. Esto es:
+Cada vez que se inserte un Triple_Plan, deberá insertarse una fila en la tabla source donde source.title = Triple_Plan.Nombre, source.type = 'c'
+De esta forma, se implementan los comentarios, likes y tags para Triple Planes
+
+d) Por cada fila de la tabla 'Tetra_Plan' hay una fila en la tabla 'source' que le corresponde. Esto es:
+Cada vez que se inserte un Tetra_Plan, deberá insertarse una fila en la tabla source donde source.title = Tetra_Plan.Nombre, source.type = 'd'
+De esta forma, se implementan los comentarios, likes y tags para Tetra Planes
+
+e) Por cada fila de la tabla 'Proveedores' hay una fila en la tabla 'source' que le corresponde. Esto es:
+Cada vez que se inserte un Proveedores, deberá insertarse una fila en la tabla source donde source.title = Proveedores.Nombre, source.type = 'd'
+De esta forma, se implementan los comentarios, likes y tags para Tetra Planes
+
+f) Por cada fila de la tabla 'cines' hay una fila en la tabla 'source' que le corresponde. Esto es:
+Cada vez que se inserte una cine, deberá insertarse una fila en la tabla 'source' donde source.title = cines.nombre_cine
+De esta forma, se implementan los comentarios, likes y tags a las películas.

@@ -27,5 +27,3 @@ g) Las peliculas y los servicios estan relacionados por peliculas.titulo = servi
 f) Las peliculas y los Planes Triples estan relacionados por peliculas.titulo = Triple_Plan.ElementoX
 
 h) Las peliculas y los Planes Tetras estan relacionados por peliculas.titulo = Tetra_Plan.ElementoX
-
-i) Los usuarios en la red social y los usuarios de las empresas se relacionan a traves del mail, o sea, user.mail = Contacto_correo.Correo_electronico

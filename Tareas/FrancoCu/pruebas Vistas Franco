@@ -71,7 +71,7 @@ on s.id = l.id_source
 where l.type = 0
 group by l.id_source;
 -----------------------------------------
--- vista 2 los proveedores y la cantidad de peliculas que ofrecen de cierto genero (en este caso drama)
+-- vista 2: los proveedores y la cantidad de peliculas que ofrecen de cierto genero (en este caso drama)
 
 create view cc320114_db.empresas_peliculas_drama as
 select us.empresa as proveedor, count(g.pelicula) as n_peliculas
@@ -105,6 +105,48 @@ join cc320151_db.Usuario_Tetra_Plan as utp
 on tp.Nombre = utp.Nombre_servicio
 where (p.titulo =tp.Elemento1 or p.titulo =tp.Elemento2 or p.titulo =tp.Elemento3) and g.genero = 'drama';
 
+----
+--mejoracion vista 2
+
+create view cc320114_db.union_servicios as
+select us.empresa as proveedor, g.genero as genero, count(g.pelicula) as n_peliculas
+from cc320114_db.genero as g 
+join cc320114_db.peliculas as p
+on g.pelicula = p.pelicula_ID
+join cc320151_db.Usuario_servicio_base as us
+on p.titulo = us.Nombre_servicio
+group by us.empresa, g.genero
+
+union
+
+select utp.Empresa as proveedor, g.genero as genero, count(g.pelicula) as n_peliculas
+from cc320114_db.genero as g
+join cc320114_db.peliculas as p
+on g.pelicula = p.pelicula_ID,
+cc320151_db.Triple_Plan as tp
+join cc320151_db.Usuario_Triple_Plan as utp
+on tp.Nombre = utp.Nombre_servicio
+where (p.titulo =tp.Elemento1 or p.titulo =tp.Elemento2 or p.titulo =tp.Elemento3)
+group by utp.empresa, g.genero
+
+union
+
+select utp.Empresa as proveedor, g.genero as genero, count(g.pelicula) as n_peliculas
+from cc320114_db.genero as g
+join cc320114_db.peliculas as p
+on g.pelicula = p.pelicula_ID,
+cc320151_db.Tetra_Plan as tp
+join cc320151_db.Usuario_Tetra_Plan as utp
+on tp.Nombre = utp.Nombre_servicio
+where (p.titulo =tp.Elemento1 or p.titulo =tp.Elemento2 or p.titulo =tp.Elemento3 or p.titulo =tp.Elemento4)
+group by utp.empresa, g.genero;
+
+-- view sumadora
+
+create view empresas_genero_peliculas as
+select u.proveedor as proveedor, u.genero as genero, sum(u.n_peliculas) as n_peliculas
+from union_servicios as u
+group by u.proveedor, u.genero;
 ----------------------------
 -- creacion trigger consistencia peliculas-recursos
 

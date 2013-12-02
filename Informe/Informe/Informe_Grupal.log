@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.14)  1 DEC 2013 12:53
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.14)  1 DEC 2013 21:07
 entering extended mode
  %&-line parsing enabled.
-**Inform3.tex
-(./Inform3.tex
+**Informe_Grupal.tex
+(./Informe_Grupal.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, spanish, galician, catalan, loaded.
@@ -678,62 +678,95 @@ Package: geometry 2008/12/21 v4.2 Page Geometry
 \Gm@odd@mp=\dimen124
 \Gm@even@mp=\dimen125
 \Gm@dimlist=\toks25
-) (./Inform3.aux)
-\openout1 = `Inform3.aux'.
+)
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2009/02/07 v0.4g Insert pages of external PDF documents (AM)
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 38.
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count121
+\calc@Bcount=\count122
+\calc@Adimen=\dimen126
+\calc@Bdimen=\dimen127
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count123
+\calc@Cskip=\skip57
+)
+(/usr/share/texmf-texlive/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2006/07/14 v1.1d eso-pic (RN)
 
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf-texlive/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2009/02/07 v0.4g Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box30
+\AM@toc@title=\toks26
+\c@AM@survey=\count124
+\AM@templatesizebox=\box31
+)
+(./Informe_Grupal.aux)
+\openout1 = `Informe_Grupal.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 40.
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-\c@lstlisting=\count121
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+\c@lstlisting=\count125
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count122
-\scratchdimen=\dimen126
-\scratchbox=\box30
-\nofMPsegments=\count123
-\nofMParguments=\count124
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count125
-\MPscratchDim=\dimen127
-\MPnumerator=\count126
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count126
+\scratchdimen=\dimen128
+\scratchbox=\box32
+\nofMPsegments=\count127
+\nofMParguments=\count128
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count129
+\MPscratchDim=\dimen129
+\MPnumerator=\count130
+\everyMPtoPDFconversion=\toks28
 )
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring OFF on input line 40.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count127
+\c@section@level=\count131
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
- (./Inform3.out)
-(./Inform3.out)
-\@outlinefile=\write3
-\openout3 = `Inform3.out'.
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
 
-\AtBeginShipoutBox=\box31
+(./Informe_Grupal.out) (./Informe_Grupal.out)
+\@outlinefile=\write3
+\openout3 = `Informe_Grupal.out'.
+
+\AtBeginShipoutBox=\box33
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -776,7 +809,8 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-(./portada.tex <logos/logo_fcfm.jpg, id=59, 197.73875pt x 140.525pt>
+ABD: EveryShipout initializing macros (./portada.tex
+<logos/logo_fcfm.jpg, id=39, 197.73875pt x 140.525pt>
 File: logos/logo_fcfm.jpg Graphic file (type jpg)
 
 <use logos/logo_fcfm.jpg>
@@ -807,7 +841,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--11
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logos/logo_fcfm.jpg>] (.
-/Inform3.toc
+/Informe_Grupal.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 5.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
@@ -823,52 +857,78 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 5.
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ))
 \tf@toc=\write4
-\openout4 = `Inform3.toc'.
+\openout4 = `Informe_Grupal.toc'.
 
 
-<logos/logo-dcc.jpg, id=83, 420.57124pt x 121.45375pt>
+<logos/logo-dcc.jpg, id=58, 420.57124pt x 121.45375pt>
 File: logos/logo-dcc.jpg Graphic file (type jpg)
 
 <use logos/logo-dcc.jpg>pdfTeX warning (ext4): destination with the same identi
 fier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52 \newpage
+l.54 \newpage
               [1 <./logos/logo-dcc.jpg>]
 File: logos/logo-dcc.jpg Graphic file (type jpg)
  <use logos/logo-dcc.jpg> [2]
-<images/modelo.png, id=94, 916.42375pt x 956.57375pt>
-File: images/modelo.png Graphic file (type png)
- <use images/modelo.png>
 File: logos/logo-dcc.jpg Graphic file (type jpg)
 
-<use logos/logo-dcc.jpg> [3 <./images/modelo.png (PNG copy)>]
+<use logos/logo-dcc.jpg> [3]
 File: logos/logo-dcc.jpg Graphic file (type jpg)
+ <use logos/logo-dcc.jpg> [4]
+<images/modelo-todos.pdf, id=97, page=1, 794.97pt x 614.295pt>
+File: images/modelo-todos.pdf Graphic file (type pdf)
 
-<use logos/logo-dcc.jpg> [4]
-File: logos/logo-dcc.jpg Graphic file (type jpg)
- <use logos/logo-dcc.jpg> [5]
-File: logos/logo-dcc.jpg Graphic file (type jpg)
+<use images/modelo-todos.pdf, page 1>
+File: images/modelo-todos.pdf Graphic file (type pdf)
+ <use images/modelo-todos.pdf, page 1>
+File: images/modelo-todos.pdf Graphic file (type pdf)
 
-<use logos/logo-dcc.jpg> [6] (./Inform3.aux) ) 
+<use images/modelo-todos.pdf, page 1>
+File: images/modelo-todos.pdf Graphic file (type pdf)
+ <use images/modelo-todos.pdf, page 1>
+File: images/modelo-todos.pdf Graphic file (type pdf)
+
+<use images/modelo-todos.pdf, page 1> [5 <./images/modelo-todos.pdf>]
+<images/modelo-todos.pdf, id=119, page=2, 794.97pt x 614.295pt>
+File: images/modelo-todos.pdf Graphic file (type pdf)
+
+<use images/modelo-todos.pdf, page 2>
+File: images/modelo-todos.pdf Graphic file (type pdf)
+ <use images/modelo-todos.pdf, page 2>
+File: images/modelo-todos.pdf Graphic file (type pdf)
+
+<use images/modelo-todos.pdf, page 2> [6 <./images/modelo-todos.pdf>]
+<images/modelo-todos.pdf, id=130, page=3, 794.97pt x 614.295pt>
+File: images/modelo-todos.pdf Graphic file (type pdf)
+
+<use images/modelo-todos.pdf, page 3>
+File: images/modelo-todos.pdf Graphic file (type pdf)
+ <use images/modelo-todos.pdf, page 3>
+File: images/modelo-todos.pdf Graphic file (type pdf)
+
+<use images/modelo-todos.pdf, page 3> [7 <./images/modelo-todos.pdf>]
+(./Informe_Grupal.aux) ) 
 Here is how much of TeX's memory you used:
- 8416 strings out of 494999
- 114974 string characters out of 1180815
- 197985 words of memory out of 3000000
- 11413 multiletter control sequences out of 15000+50000
- 14783 words of font info for 43 fonts, out of 3000000 for 9000
+ 9094 strings out of 494999
+ 125766 string characters out of 1180815
+ 211635 words of memory out of 3000000
+ 12067 multiletter control sequences out of 15000+50000
+ 15467 words of font info for 44 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
- 38i,17n,43p,672b,407s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/frank/.texmf-var/fonts/pk
-/ljfour/jknappen/ec/ecbx1440.600pk> </home/frank/.texmf-var/fonts/pk/ljfour/jkn
-appen/ec/ecbx1200.600pk> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
-bx1728.600pk> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600p
-k> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/f
-rank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/frank/.texmf
--var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk>
-Output written on Inform3.pdf (7 pages, 475542 bytes).
+ 38i,18n,43p,978b,557s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+bx1440.600pk> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600p
+k> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/f
+rank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/frank/.texmf
+-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/frank/.texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/frank/.texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx2074.600pk> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecbx2488.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Informe_Grupal.pdf (8 pages, 2180924 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
+ 406 PDF objects out of 1000 (max. 8388607)
  30 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

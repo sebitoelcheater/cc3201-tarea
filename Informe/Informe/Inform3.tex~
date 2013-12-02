@@ -42,7 +42,7 @@
 \headheight=60pt 					
 \fancyhead[L]							
 {	\begin{minipage}{6cm}
-		\includegraphics[width=\textwidth]{logos/logo-dcc.jpg}		
+		\includegraphics[width=0.9\textwidth]{logos/logo-dcc.jpg}		
 	\end{minipage}	}
 \fancyhead[R]
 {}

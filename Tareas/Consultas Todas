@@ -1,0 +1,9 @@
+
+select l.pelicula, d.Director, l.dislikes as n_dislikes, d.Precio
+from cc320114_db.likeo_peliculas as l join cc320114_db.Directores_pelicula as d on l.pelicula = d.Pelicula
+join( 
+	select max(l.dislikes) as m
+	from cc320114_db.likeo_peliculas as l join cc320114_db.Directores_pelicula as d on l.pelicula = d.Pelicula
+	) as s on l.dislikes = s.m;
+
+

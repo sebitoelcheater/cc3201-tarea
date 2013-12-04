@@ -49,27 +49,28 @@ on t1.t = t2.t;
 -- esta es la correcta
 create view cc320114_db.likeo_peliculas as
 select t1.t as pelicula, t1.l as likes, t2.dl as dislikes 
-from cc320114_db.likeo_peliculas_likes as t1 join cc320114_db.likeo_peliculas_dislikes as t2 on t1.t = t2.t;
+from cc320114_db.likeo_peliculas_likes as t1
+join cc320114_db.likeo_peliculas_dislikes as t2
+on t1.t = t2.t;
 
 create view cc320114_db.likeo_peliculas_likes as
-select p.titulo as t, count(l.type) as l
+select p.titulo as t, SUM(CASE WHEN l.type = 1 THEN 1 ELSE 0 END) as l
 from cc320114_db.peliculas as p
-join cc320125_db.source as s 
+left join cc320125_db.source as s 
 on p.pelicula_id = s.id_source 
 join cc320125_db.liking as l
-on s.id = l.id_source 
-where l.type = 1
-group by l.id_source;
+on s.id = l.id_source
+group by p.titulo;
+
 	
 create view cc320114_db.likeo_peliculas_dislikes as
-select p.titulo as t, count(l.type) as dl
+select p.titulo as t, SUM(CASE WHEN l.type = 0 THEN 1 ELSE 0 END) as dl
 from cc320114_db.peliculas as p
-join cc320125_db.source as s 
+left join cc320125_db.source as s 
 on p.pelicula_id = s.id_source 
 join cc320125_db.liking as l
-on s.id = l.id_source 
-where l.type = 0
-group by l.id_source;
+on s.id = l.id_source
+group by p.titulo;
 -----------------------------------------
 -- vista 2: los proveedores y la cantidad de peliculas que ofrecen de cierto genero (en este caso drama)
 
@@ -168,5 +169,88 @@ end
 create trigger cc320114_db.prueba after insert
 on cc320114_db.peliculas as
 	insert into cc320114_db.genero values(new.pelicula_ID, 'drama');
+
+-------------------------------------------------------------------------------
+--otra vista: los usuarios que son amigos y que contratan uno o mas servicio del mismo proveedor (usuario1, usuario2, servicio, proveedor)
+
+create view cc320114_db.amigos_servicios as
+select u1.name as usuario1, u2.name as usuario2, usb1.Nombre_servicio as servicio, usb1.Empresa as proveedor
+from cc320125_db.user as u1 
+join cc320125_db.friendship as f on u1.id = f.id_requester
+join cc320125_db.user as u2 on f.id_requested = u2.id
+join cc320151_db.Contacto_correo as cc1 on u1.mail = cc1.Correo_electronico
+join cc320151_db.Usuario_servicio_base as usb1 on cc1.Rut = usb1.Rut
+join cc320151_db.Contacto_correo as cc2 on u2.mail = cc2.Correo_electronico
+join cc320151_db.Usuario_servicio_base as usb2 on cc2.Rut = usb2.Rut
+where usb1.Nombre_servicio = usb2.Nombre_servicio
+
+union
+
+select u1.name as usuario1, u2.name as usuario2, utp1.Nombre_servicio as servicio, utp1.Empresa as proveedor
+from cc320125_db.user as u1 
+join cc320125_db.friendship as f on u1.id = f.id_requester
+join cc320125_db.user as u2 on f.id_requested = u2.id
+join cc320151_db.Contacto_correo as cc1 on u1.mail = cc1.Correo_electronico
+join cc320151_db.Usuario_Triple_Plan as utp1 on cc1.Rut = utp1.Rut
+join cc320151_db.Contacto_correo as cc2 on u2.mail = cc2.Correo_electronico
+join cc320151_db.Usuario_Triple_Plan as utp2 on cc2.Rut = utp2.Rut
+where utp1.Nombre_servicio = utp2.Nombre_servicio
+
+union 
+
+select u1.name as usuario1, u2.name as usuario2, utp1.Nombre_servicio as servicio, utp1.Empresa as proveedor
+from cc320125_db.user as u1 
+join cc320125_db.friendship as f on u1.id = f.id_requester
+join cc320125_db.user as u2 on f.id_requested = u2.id
+join cc320151_db.Contacto_correo as cc1 on u1.mail = cc1.Correo_electronico
+join cc320151_db.Usuario_Tetra_Plan as utp1 on cc1.Rut = utp1.Rut
+join cc320151_db.Contacto_correo as cc2 on u2.mail = cc2.Correo_electronico
+join cc320151_db.Usuario_Tetra_Plan as utp2 on cc2.Rut = utp2.Rut
+where utp1.Nombre_servicio = utp2.Nombre_servicio;
+
+-------------------------------------------------------------------------------
+--otra vista: los usuarios con mas de n followers, la cantidad de followers y los servicios que contratan (usuario, n° followers, servicios) 
+
+create view cc320114_db.n_followers as
+select u.name as nombre, u.mail as mail, count(f.id_follower) as n_followers 
+from cc320125_db.user as u
+join cc320125_db.following as f
+on u.id = f.id_followed 
+group by u.id
+
+create view cc320114_db.followers_servicios as
+select nf1.nombre as nombre, nf1.n_followers as n_followers, usb1.Nombre_servicio as servicio
+from cc320114_db.n_followers as nf1
+join cc320151_db.Contacto_correo as cc1 on nf1.mail = cc1.Correo_electronico
+join cc320151_db.Usuario_servicio_base as usb1 on cc1.Rut = usb1.Rut
+order by nf1.n_followers desc
+
+-------------------------------------------------------------------------
+select cc.Rut
+from cc320151_db.Contacto_correo as cc
+join cc320125_db.user as u on u.mail = cc.Correo_electronico
+
+--------------------------------------------------------------------------
+select u1.name as usuario1, usb1.Nombre_servicio as servicio, usb1.Empresa as proveedor
+from cc320125_db.user as u1 
+join cc320151_db.Contacto_correo as cc1 on u1.mail = cc1.Correo_electronico
+join cc320151_db.Usuario_servicio_base as usb1 on cc1.Rut = usb1.Rut
+
+select u1.name as usuario1, u2.name as usuario2
+from cc320125_db.user as u1 
+join cc320125_db.friendship as f on u1.id = f.id_requester
+join cc320125_db.user as u2 on f.id_requested = u2.id
+
+
+select u1.id as id, u1.name as usuario, cc1.Rut as rut, u1.mail
+from cc320125_db.user as u1 
+join cc320151_db.Contacto_correo as cc1 on u1.mail = cc1.Correo_electronico
+
+insert into cc320125_db.friendship values (107, 40, 35, 'a', '2008-06-23 04:01:51', '2014-07-29 01:44:05');
+
+select p.titulo, g.genero
+from peliculas as p join generos as g on p.pelicula_ID = g.pelicula;
+-----
+
 
 

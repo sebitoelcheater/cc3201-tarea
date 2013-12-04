@@ -13,7 +13,7 @@ insert into directores values('Raito Yagami', 'masculino', 'Japon', '1936-04-18'
 insert into actores values('Valentina Soto', 'femenino', 'Chile', '1953-02-09');
 insert into actores values('Mario Vergari', 'masculino', 'Italia', '1962-06-13');
 insert into actores values('Fernandich Moraliz', 'masculino', 'Alemania', '1911-06-27');
-insert into actores values('Sebastian Needles', 'masculino', 'Estados Unidos', '1934-09-18');
+insert into actores values('Sebastian Needles', 'masculino', 'Estados Unidos', '1934-09-18');-
 insert into actores values('Nataly Lais', 'femenino', 'Estados Unidos', '1945-08-01');
 insert into actores values('Li Shang', 'femenino', 'China', '1939-09-02');
 insert into actores values('Jean Cagli', 'masculino', 'Francia', '1901-12-12');
@@ -26,12 +26,12 @@ insert into actores values('Maya Fey', 'femenino', 'India', '1930-07-26');
 insert into actores values('Beatrix Deaximun', 'femenino', 'Francia', '1959-08-25');
 insert into actores values('Jack Hammer', 'masculino', 'Inglaterra', '1963-03-16');
 insert into actores values('Phoenix Trite', 'masculino', 'Canada', '1970-01-14');
-insert into actores values('Milles Edgar', 'masculino', 'Suiza', '1983-04-16');
+insert into actores values('Milles Edgar', 'masculino', 'Suiza', '1983-04-16');-
 insert into actores values('Diego Armando', 'masculino', 'Mexico', '1976-06-19');
 insert into actores values('Tanya Cannon', 'femenino', 'Dinamarca', '1960-08-14');
 insert into actores values('Aurelia Dodson', 'femenino', 'Islandia', '1943-09-16');
 insert into actores values('Sebastian Hernandez', 'masculino', 'España', '1952-07-19');
-insert into actores values('Pablo Polanco', 'masculino', 'Chile', '1967-02-14'); 
+insert into actores values('Pablo Polanco', 'masculino', 'Chile', '1967-02-14');
 
 --datos cine
 insert into cines values('cine 1', 'Santiago');

@@ -146,7 +146,7 @@ Las vistas que se implementaron para extraer información de las tres bases de d
 			\caption {Vista 4}  
 		\end{table}
 		
-		\item Los usuarios con mas de $n$ seguidores, la cantidad de seguidores y los servicios que contratan. Atributos: usuario, n$^\circ$ seguidores, servicios.
+		\item Los usuarios con más de $n$ seguidores, la cantidad de seguidores y los servicios que contratan. Atributos: usuario, n$^\circ$ seguidores, servicios.
 		
 		\begin{table}[ht!]
 			\centering

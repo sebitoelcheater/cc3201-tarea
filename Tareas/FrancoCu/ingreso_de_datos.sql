@@ -31,7 +31,7 @@ insert into actores values('Diego Armando', 'masculino', 'Mexico', '1976-06-19')
 insert into actores values('Tanya Cannon', 'femenino', 'Dinamarca', '1960-08-14');
 insert into actores values('Aurelia Dodson', 'femenino', 'Islandia', '1943-09-16');
 insert into actores values('Sebastian Hernandez', 'masculino', 'España', '1952-07-19');
-insert into actores values('Pablo Polanco', 'masculino', 'Chile', '1967-02-14'); 
+insert into actores values('Pablo Polanco', 'masculino', 'Chile', '1967-02-14');
 
 --datos cine
 insert into cines values('cine 1', 'Santiago');

@@ -1,52 +1,4 @@
---prueba consulta
-select p.titulo as peliculas, s.title as comentario
-from cc320114_db.peliculas as p, cc320125_db.source as s
-where p.pelicula_ID = s.id;
-
---prueba view (no tengo permiso)
-create view cc320114_db.hola as
-select p.titulo as peliculas, s.title as comentario
-from cc320114_db.peliculas as p, cc320125_db.source as s
-where p.pelicula_ID = s.id;
-
---prueba join
-select p.titulo as peliculas, s.title as comentario
-from cc320114_db.peliculas as p join cc320125_db.source as s on p.pelicula_ID = s.id;
-
----------------------------------------------------
 --vista 1 (la cantidad de likes y dislikes de las peliculas (pelicula, like, dislike))
-
-create view cc320114.likeo_peliculas as
-
-select t1.t as pelicula, t1.l as likes, t2.dl as dislikes 
-from(
-	select p.titulo as t, count(l.type) as l
-
-	from cc320114_db.peliculas as p
-	join cc320125_db.source as s 
-	on p.pelicula_id = s.id 
-	join cc320125_db.liking as l
-	on s.id = l.id_source 
-	
-	where l.type = 1
-	
-	group by l.id_source) as t1
-join(	
-	select p.titulo as t, count(l.type) as dl
-
-	from cc320114_db.peliculas as p
-	join cc320125_db.source as s 
-	on p.pelicula_id = s.id 
-	join cc320125_db.liking as l
-	on s.id = l.id_source 
-
-	where l.type = 0
-	
-	group by l.id_source) as t2
-on t1.t = t2.t;
-
---
--- esta es la correcta
 create view cc320114_db.likeo_peliculas as
 select t1.t as pelicula, t1.l as likes, t2.dl as dislikes 
 from cc320114_db.likeo_peliculas_likes as t1
@@ -71,44 +23,9 @@ on p.pelicula_id = s.id_source
 join cc320125_db.liking as l
 on s.id = l.id_source
 group by p.titulo;
------------------------------------------
--- vista 2: los proveedores y la cantidad de peliculas que ofrecen de cierto genero (en este caso drama)
 
-create view cc320114_db.empresas_peliculas_drama as
-select us.empresa as proveedor, count(g.pelicula) as n_peliculas
-from cc320114_db.genero as g 
-join cc320114_db.peliculas as p
-on g.pelicula = p.pelicula_ID
-join cc320151_db.Usuario_servicio_base as us
-on p.titulo = us.Nombre_servicio
-where g.genero = 'drama'
-group by us.empresa
-
-union
-
-select utp.Empresa as proveedor, count(g.pelicula) as n_peliculas
-from cc320114_db.genero as g
-join cc320114_db.peliculas as p
-on g.pelicula = p.pelicula_ID,
-cc320151_db.Triple_Plan as tp
-join cc320151_db.Usuario_Triple_Plan as utp
-on tp.Nombre = utp.Nombre_servicio
-where (p.titulo =tp.Elemento1 or p.titulo =tp.Elemento2 or p.titulo =tp.Elemento3) and g.genero = 'drama'
-
-union
-
-select utp.Empresa as proveedor, count(g.pelicula) as n_peliculas
-from cc320114_db.genero as g
-join cc320114_db.peliculas as p
-on g.pelicula = p.pelicula_ID,
-cc320151_db.Triple_Plan as tp
-join cc320151_db.Usuario_Tetra_Plan as utp
-on tp.Nombre = utp.Nombre_servicio
-where (p.titulo =tp.Elemento1 or p.titulo =tp.Elemento2 or p.titulo =tp.Elemento3) and g.genero = 'drama';
-
-----
---mejoracion vista 2
-
+-----------------------------------------------------------------------------------------------------------------------------
+-- vista 2 los proveedores y la cantidad de peliculas que ofrecen de cierto genero (en este caso drama)
 create view cc320114_db.union_servicios as
 select us.empresa as proveedor, g.genero as genero, count(g.pelicula) as n_peliculas
 from cc320114_db.genero as g 
@@ -148,27 +65,6 @@ create view empresas_genero_peliculas as
 select u.proveedor as proveedor, u.genero as genero, sum(u.n_peliculas) as n_peliculas
 from union_servicios as u
 group by u.proveedor, u.genero;
-----------------------------
--- creacion trigger consistencia peliculas-recursos
-
-create trigger cc3201_db.recursos-peliculas before insert
-on peliculas for each row
-begin
-	insert into cc320151_db.resourses values(NULL, NULL, NULL, NULL, m);
-	DECLARE next_id INT;
-   	SET next_id = (SELECT AUTO_INCREMENT FROM cc320125_db.TABLES WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='resources');
-   	SET NEW.pelicula_ID = next_id;
-end
-
-create trigger cc320114_db.prueba after insert
-on cc320114_db.peliculas for each row
-begin
-	insert into cc320114_db.genero values(new.pelicula_ID, 'drama')
-end
-	
-create trigger cc320114_db.prueba after insert
-on cc320114_db.peliculas as
-	insert into cc320114_db.genero values(new.pelicula_ID, 'drama');
 
 -------------------------------------------------------------------------------
 --otra vista: los usuarios que son amigos y que contratan uno o mas servicio del mismo proveedor (usuario1, usuario2, servicio, proveedor)
@@ -225,14 +121,46 @@ join cc320151_db.Contacto_correo as cc1 on nf1.mail = cc1.Correo_electronico
 join cc320151_db.Usuario_servicio_base as usb1 on cc1.Rut = usb1.Rut
 order by nf1.n_followers desc
 
-----
-select cc.Rut
-from cc320151_db.Contacto_correo as cc
-join cc320125_db.user as u on u.mail = cc.Correo_electronico
+-------------------------------------------------------------------------------------------
+--vista pablo: directores con sus peliculas mas caras
 
+create view cc320114_db.Directores_pelicula as 
+	Select peliculas.director as Director, peliculas.titulo as Pelicula, MAX(Servicios_base.precio) as Precio 
+	From cc320114_db.peliculas, cc320151_db.Servicios_base 
+	Where Servicios_base.Servicio = 'Streaming' and Servicios_base.Nombre_servicio = peliculas.titulo 
+	Group by (peliculas.director)
+	Order by (precio) asc;
+	
+-------------------------------------------------------------------------------------------
+--vista pablo: likes y dislikes de los tags de actores
 
+create view cc320114_db.dlikes as
+	Select DISTINCT (tag_liking.id_user) as Users,actores.nombre as Actor,tag_liking.id_tag as id_tag,tag_liking.type as type
+	From cc320125_db.tag,cc320125_db.tag_liking,cc320114_db.actores
+	Where tag_liking.type=0 and tag.id=tag_liking.id_tag and tag.tag=actores.nombre;
 
+create view cc320114_db.likes as
+	Select DISTINCT (tag_liking.id_user) as Users,actores.nombre as Actor,tag_liking.id_tag as id_tag,tag_liking.type as type
+	From cc320125_db.tag,cc320125_db.tag_liking,cc320114_db.actores
+	Where tag_liking.type=1 and tag.id=tag_liking.id_tag and tag.tag=actores.nombre;
 
+create view cc320114_db.likes_num as
+	Select actores.nombre as Actor,Count(id_tag) as likes
+	From cc320114_db.actores
+	Left join cc320114_db.likes on actores.nombre=likes.Actor
+	Group by(Actor);
+
+create view cc320114_db.dlikes_num as
+	Select actores.nombre as Actor,Count(id_tag) as dlikes
+	From cc320114_db.actores
+	Left join cc320114_db.dlikes on actores.nombre=dlikes.Actor
+	Group by(Actor);
+
+create view cc320114_db.Tag_de_actores as
+	Select Distinct(dlikes_num.Actor) as Actor, likes_num.likes as Likes, dlikes_num.dlikes as Dislikes
+	From cc320114_db.dlikes_num,cc320114_db.likes_num
+	Where dlikes_num.Actor=likes_num.Actor
+	Order by (Actor) asc;
 
 
 

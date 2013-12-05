@@ -57,9 +57,9 @@
 
 \section{Descripción del Problema}
 
-En esta entrega se pretende crear una base de datos para una empresa que ofrece un servicios de películas mediante \emph{streaming}. Para lograr esto se deben integrar las tres bases de datos creadas de manera individual por los autores. Las bases de datos originales corresponden a las siguientes: una base de datos de Red Social, en donde los usuarios pueden comentar y poner ``me gusta'' a los recursos, una base de datos de Películas, que contiene toda la información de películas, actores y directores, y una base de datos de Empresas, que contiene información de los servicios que ofrecen las empresas y los usuarios que los han contratado.
+En esta entrega se pretende crear una base de datos para una empresa que ofrece servicios de películas mediante \emph{streaming}. Para lograr esto se deben integrar las tres bases de datos creadas de manera individual por los autores. Las bases de datos originales corresponden a las siguientes: una base de datos de Red Social, en donde los usuarios pueden comentar y poner ``me gusta'' a los recursos, una base de datos de Películas, que contiene toda la información de películas, actores y directores, y una base de datos de Empresas, que contiene información de los servicios que ofrecen las empresas y los usuarios que los han contratado.
 
-Para lograr la integración se deben crear vistas que obtengan información interesante de las tres bases de datos. se generarán 6 vistas, 2 por cada par de base de datos: Social/Películas, Películas/Empresas Empresas/Social. Luego, utilizando las vistas creadas, se deben hacer 3 consultas que obtengan información importante de los datos. La idea es crear consultas que obtengan información relevante desde el punto de vista de la empresa, para la ``toma de decisiones''.
+Para lograr la integración se deben crear vistas que obtengan información interesante de las tres bases de datos. Se generarán 6 vistas, 2 por cada par de base de datos: Social/Películas, Películas/Empresas Empresas/Social. Luego, utilizando las vistas creadas, se deben hacer 3 consultas que obtengan información importante de los datos. La idea es crear consultas que obtengan información relevante desde el punto de vista de la empresa, para la ``toma de decisiones''.
 
 Por último se debe crear una interfaz web simple en PHP, desde la cual se puedan ejecutar las consultas creadas. La interfaz también debe considerar la variación de parámetros en las consultas, por ejemplo, cambiar el genero de una película, o cambiar el número de seguidores pedidos para un usuario. 
 
@@ -71,15 +71,15 @@ El primer problema que se debió resolver es cómo se realizó la integración d
 Además, por si se tiene alguna duda sobre la bases de datos, se adjuntan los informes anteriores de las bases de datos individuales.
 %recordar adjuntar informes
 
-Para realizar la integración se debió encontrar una forma de relacionar los tres pares de base de datos, intentando evitar en la mayor medida posible, conflictos de duplicidad, pero con la restricción de no modificar los esquemas actuales, y no agregar nuevas tablas. La relación entre la base de datos Social/Películas se hizo considerando que las películas también pueden ser recursos, a los que se las puede comentar y dar ``me gusta''. Para lograr esto se decidió hacer que los recursos que representan películas tengan la misma id en el atributo id\_source que la id de la película. Usualmente la is\_source apunta al recurso que se está comentando, pero en este caso es el vínculo con la tabla películas. Para diferenciar ese recurso con los otros, se debe colocar en su atributo type el caracter 'm' de ``movie''.
+Para realizar la integración se debió encontrar una forma de relacionar los tres pares de base de datos, intentando evitar en la mayor medida posible, conflictos de duplicidad, pero con la restricción de no modificar los esquemas actuales, y no agregar nuevas tablas. La relación entre la base de datos Social/Películas se hizo considerando que las películas también pueden ser recursos, a los que se las puede comentar y dar ``me gusta''. Para lograr esto se decidió hacer que los recursos que representan películas tengan la misma id en el atributo \texttt{id\_source} que la id de la película. Usualmente la \texttt{id\_source} apunta al recurso que se está comentando, pero en este caso es el vínculo con la tabla películas. Para diferenciar ese recurso con los otros, se debe colocar en su atributo \texttt{type} el caracter 'm' de \emph{movie}.
 
 La relación entre Empresa y Red Social se hizo a través de los usuarios de ambas bases de datos. Debido a que en la Red Social la llave primaria de los usuarios era una id, y en Empresas era un RUT, no se podían relacionar por ese atributo. En cambio se decidió relacionar ambas tabla por el email de los usuarios. En principio los mails no son llave primaria, sin embargo para lograr este vínculo se necesario imponer la restricción de un mail único por usuario. Para conservar esta restricción, ésta se impone a la hora de ingresar los datos.
 
-Por último, para relación entre Películas y Empresas se hizo que un conjunto de los servicios básicos que ofrecen las empresas sea cada una de las películas (por separado) en un estilo de \emph{pay per view}. De esta manera el vínculo entre ambas bases de datos es el título de la película con el nombre del servicio base. Un problema que se tuvo con este enfoque es que algunas veces el \emph{string} que contenía el título de la película, que es un VARCHAR(100), era demasiado largo y con alcanzaba en el atributo del nombre de servicio, que es un VARCHAR(20). Para solucionar eso simplemente se ingresó en servicios el título de la película hasta donde alcanzara en el atributo. Luego, para hacer un join, se usa el operador 'like' en vez de la igualdad. Se considera que el fragmento del título de la película tomada es el suficiente para que no haya ambigüedad entre las películas, pero no se puede asegurar.
+Por último, para relación entre Películas y Empresas se hizo que un conjunto de los servicios básicos que ofrecen las empresas sea cada una de las películas (por separado) en un estilo de \emph{pay per view}. De esta manera el vínculo entre ambas bases de datos es el título de la película con el nombre del servicio base. Un problema que se tuvo con este enfoque es que algunas veces el \emph{string} que contenía el título de la película, que es un VARCHAR(100), era demasiado largo y con alcanzaba en el atributo del nombre de servicio, que es un VARCHAR(20). Para solucionar eso simplemente se ingresó en servicios el título de la película hasta donde alcanzara en el atributo. Luego, para hacer un join, se usa el operador \texttt{like} en vez de la igualdad. Se considera que el fragmento del título de la película tomada es el suficiente para que no haya ambigüedad entre las películas, pero no se puede asegurar.
 
 \subsection{Vistas}
 
-Las vistas que se implementaron para extraer información de las tres bases de datos son las siguientes:
+Las vistas que se implementaron para extraer información de las tres bases de datos son las siguientes (el código para crear las vistas es se encuentra en ``vistas todas.sql):
 
 \begin{itemize}
 	\item Vistas Social/Películas:
@@ -96,12 +96,12 @@ Las vistas que se implementaron para extraer información de las tres bases de d
 		\end{table}
 
 
-		\item  Los usuarios que hicieron al menos un comentario con un tag que sea el nombre de un actor, y la cantidad de ``me gusta'' y ``no me gusta'' de ese tag. Atributos: usuario, tag, n$^\circ$ de ``me gusta'', n$^\circ$ de ``no me gusta''.
+		\item  Tags usados por usuarios que sea el nombre de un actor, y la cantidad de ``me gusta'' y ``no me gusta'' de ese tag. Atributos: tag, n$^\circ$ de ``me gusta'', n$^\circ$ de ``no me gusta''.
 		
 		\begin{table}[ht!]
 			\centering
 			\begin{tabular}{||c|l|l||} \hline 
-				pelicula & n$^\circ$ likes & n$^\circ$ de dislikes\\ \hline
+				tag & n$^\circ$ likes & n$^\circ$ de dislikes\\ \hline
 			\end{tabular}
 			\caption {Vista 2}  
 		\end{table}
@@ -143,30 +143,71 @@ Las vistas que se implementaron para extraer información de las tres bases de d
 			\begin{tabular}{||c|l|l|l||} \hline 
 				usuario 1 & usuario 2 & servicio & proveedor\\ \hline
 			\end{tabular}
-			\caption {Vista 4}  
+			\caption {Vista 5}  
 		\end{table}
 		
-		\item Los usuarios con más de $n$ seguidores, la cantidad de seguidores y los servicios que contratan. Atributos: usuario, n$^\circ$ seguidores, servicios.
+		\item Los usuarios con al menos un seguidor, la cantidad de seguidores y los servicios que contratan. Atributos: usuario, n$^\circ$ seguidores, servicios.
 		
 		\begin{table}[ht!]
 			\centering
 			\begin{tabular}{||c|l|l|l||} \hline 
 				usuario & n$^\circ$ followers & servicios \\ \hline
 			\end{tabular}
-			\caption {Vista 4}  
+			\caption {Vista 6}  
 		\end{table}
 		
 	\end{enumerate}
-	
-
-
 
 \end{itemize}
 
 
 \subsection{Interfaz Web}
 
+La interfaz web creada se encuentra en el dominio \url{http://anakena.dcc.uchile.cl/~cc320125/}.
+
 \section{Consultas SQL}
+
+Para esta tarea se implementaron 3 consultas que podrían ser de interés para la empresa, y que obtuvieran información cruza da las bases de datos. También se intentó aprovechar al máximo las vistas implementados. Las consultas presentan parámetros que son fijoc cuando fueron creada, pero mediante al PHP se pueden variar. El código para hacer la consultas se encuentra en el archivo ``consultas todas.sql''.  Las consultas creadas son:
+
+\begin{enumerate}
+	
+	\item Las películas que tienen más $n$ ``no me gusta'' y menos de $m$ ``me gusta'' y que corresponden a la película más cara de cierto director. Esta consulta podría ser interesante ya que se podría identificar directores que cobra muy caro por las películas, pero éstas no son muy populares.
+	
+	\begin{verbatim}
+		select l.pelicula, d.Director, l.dislikes as n_dislikes, d.Precio
+		from cc320114_db.likeo_peliculas as l 
+		join cc320114_db.Directores_pelicula as d on l.pelicula = d.Pelicula
+		where l.dislikes > 2 and l.likes < 3;
+	\end{verbatim}
+	
+	\item Los usuarios con más de $n$ seguidores, los servicios que contratan y el precio de esos servicios. Con esta consulta se puede identificar a la gente más popular, de manera de hacer rebajas en los servicios que contratan y provocar que los usuarios comuniquen la noticia.
+	
+	\begin{verbatim}
+		select f.nombre, f.n_followers, f.servicio, s.Precio
+		from cc320114_db.followers_servicios as f
+		join cc320151_db.Servicios_base as s on f.servicio = s.Nombre_servicio
+		where n_followers > 4;
+	\end{verbatim}
+	
+	\item Las películas cuya cantidad de ``likes totales'' (likes - dislikes) es menor a $n$, y tal que la cantidad de ``likes totales'' que tienen los actores que actuaron en esas películas en los tags sea mayor a $m$. De esta manera se identifica a los ``malos directores'', que a pesar de tener un elenco popular, su película fue mal evaluada.
+	
+	\begin{verbatim}
+		select s.pelicula, s.director, s.total_likes_pelicula, s.total_likes_elenco
+			from(
+			select p.titulo as pelicula, p.director as director,
+			l.likes - l.dislikes as total_likes_pelicula,
+			sum(t.Likes - t.Dislikes) as total_likes_elenco 
+			from cc320114_db.peliculas as p
+			join cc320114_db.likeo_peliculas as l on p.titulo = l.pelicula 
+			join cc320114_db.casting as c on p.pelicula_ID = c.pelicula  
+			join cc320114_db.Tag_de_actores as t on c.actor = t.Actor
+			group by l.pelicula) as s
+		where total_likes_pelicula < 2 and total_likes_elenco > 2;
+	\end{verbatim}
+	
+	
+\end{enumerate}
+
 
 \section{Anexos}
 

@@ -69,7 +69,7 @@ Por último se debe crear una interfaz web simple en PHP, desde la cual se pueda
 
 El primer problema que se debió resolver es cómo se realizó la integración de las tres bases de datos. En este informe no se describirán en detalle los esquemas para realizar las bases de datos, pero se presenta un diagrama de las tres bases de datos en el anexo.
 Además, por si se tiene alguna duda sobre la bases de datos, se adjuntan los informes anteriores de las bases de datos individuales.
-%recordar adjuntar informes
+%favor de revisar los informes anteriores.
 
 Para realizar la integración se debió encontrar una forma de relacionar los tres pares de base de datos, intentando evitar en la mayor medida posible, conflictos de duplicidad, pero con la restricción de no modificar los esquemas actuales, y no agregar nuevas tablas. La relación entre la base de datos Social/Películas se hizo considerando que las películas también pueden ser recursos, a los que se las puede comentar y dar ``me gusta''. Para lograr esto se decidió hacer que los recursos que representan películas tengan la misma id en el atributo \texttt{id\_source} que la id de la película. Usualmente la \texttt{id\_source} apunta al recurso que se está comentando, pero en este caso es el vínculo con la tabla películas. Para diferenciar ese recurso con los otros, se debe colocar en su atributo \texttt{type} el caracter 'm' de \emph{movie}.
 
@@ -180,6 +180,14 @@ Para esta tarea se implementaron 3 consultas que podrían ser de interés para l
 		where l.dislikes > 2 and l.likes < 3;
 	\end{verbatim}
 	
+	\begin{table}[ht!]
+			\centering
+			\begin{tabular}{||c|l|l|l||} \hline 
+				pelicula & Director & n$^\circ$ dislikes & n$^\circ$ Precio\\ \hline
+			\end{tabular}
+			\caption {Resultado consulta 1}  
+	\end{table}
+	
 	\item Los usuarios con más de $n$ seguidores, los servicios que contratan y el precio de esos servicios. Con esta consulta se puede identificar a la gente más popular, de manera de hacer rebajas en los servicios que contratan y provocar que los usuarios comuniquen la noticia.
 	
 	\begin{verbatim}
@@ -188,6 +196,14 @@ Para esta tarea se implementaron 3 consultas que podrían ser de interés para l
 		join cc320151_db.Servicios_base as s on f.servicio = s.Nombre_servicio
 		where n_followers > 4;
 	\end{verbatim}
+	
+	\begin{table}[ht!]
+			\centering
+			\begin{tabular}{||c|l|l|l||} \hline 
+				nombre & n\_followers & servicio & Precio\\ \hline
+			\end{tabular}
+			\caption {Resultado consulta 2}  
+	\end{table}
 	
 	\item Las películas cuya cantidad de ``likes totales'' (likes - dislikes) es menor a $n$, y tal que la cantidad de ``likes totales'' que tienen los actores que actuaron en esas películas en los tags sea mayor a $m$. De esta manera se identifica a los ``malos directores'', que a pesar de tener un elenco popular, su película fue mal evaluada.
 	
@@ -205,6 +221,13 @@ Para esta tarea se implementaron 3 consultas que podrían ser de interés para l
 		where total_likes_pelicula < 2 and total_likes_elenco > 2;
 	\end{verbatim}
 	
+	\begin{table}[ht!]
+			\centering
+			\begin{tabular}{||c|l|l|l||} \hline 
+				pelicula & director & total\_likes\_peliculas & total\_likes\_actores\\ \hline
+			\end{tabular}
+			\caption {Resultado consulta 3}  
+	\end{table}
 	
 \end{enumerate}
 

@@ -68,8 +68,7 @@ Por último se debe crear una interfaz web simple en PHP, desde la cual se pueda
 \subsection{Integración}
 
 El primer problema que se debió resolver es cómo se realizó la integración de las tres bases de datos. En este informe no se describirán en detalle los esquemas para realizar las bases de datos, pero se presenta un diagrama de las tres bases de datos en el anexo.
-Además, por si se tiene alguna duda sobre la bases de datos, se adjuntan los informes anteriores de las bases de datos individuales.
-%favor de revisar los informes anteriores.
+Si se tiene alguna duda sobre la bases de datos, favor de revisar los informes anteriores.
 
 Para realizar la integración se debió encontrar una forma de relacionar los tres pares de base de datos, intentando evitar en la mayor medida posible, conflictos de duplicidad, pero con la restricción de no modificar los esquemas actuales, y no agregar nuevas tablas. La relación entre la base de datos Social/Películas se hizo considerando que las películas también pueden ser recursos, a los que se las puede comentar y dar ``me gusta''. Para lograr esto se decidió hacer que los recursos que representan películas tengan la misma id en el atributo \texttt{id\_source} que la id de la película. Usualmente la \texttt{id\_source} apunta al recurso que se está comentando, pero en este caso es el vínculo con la tabla películas. Para diferenciar ese recurso con los otros, se debe colocar en su atributo \texttt{type} el caracter 'm' de \emph{movie}.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.14)  4 DEC 2013 23:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.12.14)  4 DEC 2013 23:40
 entering extended mode
  %&-line parsing enabled.
 **Informe_Grupal.tex
@@ -889,7 +889,7 @@ File: logos/logo-dcc.jpg Graphic file (type jpg)
 <use logos/logo-dcc.jpg> [4]
 File: logos/logo-dcc.jpg Graphic file (type jpg)
  <use logos/logo-dcc.jpg> [5]
-<images/modelo-todos.pdf, id=106, page=1, 794.97pt x 614.295pt>
+<images/modelo-todos.pdf, id=109, page=1, 794.97pt x 614.295pt>
 File: images/modelo-todos.pdf Graphic file (type pdf)
 
 <use images/modelo-todos.pdf, page 1>
@@ -903,7 +903,7 @@ File: images/modelo-todos.pdf Graphic file (type pdf)
 File: images/modelo-todos.pdf Graphic file (type pdf)
 
 <use images/modelo-todos.pdf, page 1> [6 <./images/modelo-todos.pdf>]
-<images/modelo-todos.pdf, id=129, page=2, 794.97pt x 614.295pt>
+<images/modelo-todos.pdf, id=132, page=2, 794.97pt x 614.295pt>
 File: images/modelo-todos.pdf Graphic file (type pdf)
 
 <use images/modelo-todos.pdf, page 2>
@@ -912,7 +912,7 @@ File: images/modelo-todos.pdf Graphic file (type pdf)
 File: images/modelo-todos.pdf Graphic file (type pdf)
 
 <use images/modelo-todos.pdf, page 2> [7 <./images/modelo-todos.pdf>]
-<images/modelo-todos.pdf, id=139, page=3, 794.97pt x 614.295pt>
+<images/modelo-todos.pdf, id=142, page=3, 794.97pt x 614.295pt>
 File: images/modelo-todos.pdf Graphic file (type pdf)
 
 <use images/modelo-todos.pdf, page 3>
@@ -923,13 +923,13 @@ File: images/modelo-todos.pdf Graphic file (type pdf)
 <use images/modelo-todos.pdf, page 3> [8 <./images/modelo-todos.pdf>]
 (./Informe_Grupal.aux) ) 
 Here is how much of TeX's memory you used:
- 9117 strings out of 494999
- 126381 string characters out of 1180815
+ 9120 strings out of 494999
+ 126402 string characters out of 1180815
  211635 words of memory out of 3000000
  12082 multiletter control sequences out of 15000+50000
  15780 words of font info for 45 fonts, out of 3000000 for 9000
  54 hyphenation exceptions out of 8191
- 38i,18n,43p,1009b,534s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,18n,43p,1009b,602s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
 tt1200.600pk> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600p
 k> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/f
@@ -940,9 +940,9 @@ knappen/ec/ecrm1728.600pk> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/
 ecbx2074.600pk> </home/frank/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.60
 0pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/s
 hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Informe_Grupal.pdf (9 pages, 2200847 bytes).
+Output written on Informe_Grupal.pdf (9 pages, 2203326 bytes).
 PDF statistics:
- 469 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
+ 479 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
  118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

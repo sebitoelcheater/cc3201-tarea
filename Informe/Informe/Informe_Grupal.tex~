@@ -163,6 +163,8 @@ Las vistas que se implementaron para extraer información de las tres bases de d
 
 \subsection{Interfaz Web}
 
+La interfaz web creada se encuentra en el dominio \url{http://anakena.dcc.uchile.cl/~cc320125/}.
+
 \section{Consultas SQL}
 
 Para esta tarea se implementaron 3 consultas que podrían ser de interés para la empresa, y que obtuvieran información cruza da las bases de datos. También se intentó aprovechar al máximo las vistas implementados. Las consultas presentan parámetros que son fijoc cuando fueron creada, pero mediante al PHP se pueden variar. El código para hacer la consultas se encuentra en el archivo ``consultas todas.sql''.  Las consultas creadas son:
